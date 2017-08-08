@@ -5,11 +5,11 @@ import { createStore, applyMiddleware } from 'redux';
 import PostsIndex from './components/posts_index';
 import PostsNew from './components/posts_new';
 
+import promise from 'redux-promise';
 import reducers from './reducers';
-
 import { BrowserRouter, Route } from 'react-router-dom';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 
 ReactDOM.render(
